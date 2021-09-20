@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 pragma solidity >=0.5.0 <0.8.0;
 
-import '@uniswap/v3-core/contracts/interfaces/IMintyswapV3Pool.sol';
+import '../interfaces/IMintyswapV3Pool.sol';
 
 /// @title Weighted Oracle library
 /// @notice Provides functions to integrate with different tier oracles of the same V3 pair
@@ -12,7 +12,7 @@ library WeightedOracleLibrary {
         uint128 harmonicMeanLiquidity;
     }
 
-    /// @notice Fetches a time-weighted observation for a given Uniswap V3 pool
+    /// @notice Fetches a time-weighted observation for a given Mintyswap V3 pool
     /// @param pool Address of the pool that we want to observe
     /// @param period Number of seconds in the past to start calculating the time-weighted observation
     /// @return observation An observation that has been time-weighted from (block.timestamp - period) to block.timestamp

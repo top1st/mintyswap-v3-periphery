@@ -1,17 +1,17 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 pragma solidity >=0.5.0 <0.8.0;
 
-import '@uniswap/v3-core/contracts/libraries/FullMath.sol';
-import '@uniswap/v3-core/contracts/libraries/TickMath.sol';
-import '@uniswap/v3-core/contracts/interfaces/IMintyswapV3Pool.sol';
-import '@uniswap/v3-core/contracts/libraries/LowGasSafeMath.sol';
+import './FullMath.sol';
+import './TickMath.sol';
+import '../interfaces/IMintyswapV3Pool.sol';
+import '../libraries/LowGasSafeMath.sol';
 import '../libraries/PoolAddress.sol';
 
 /// @title Oracle library
 /// @notice Provides functions to integrate with V3 pool oracle
 library OracleLibrary {
-    /// @notice Fetches time-weighted average tick using Uniswap V3 oracle
-    /// @param pool Address of Uniswap V3 pool that we want to observe
+    /// @notice Fetches time-weighted average tick using Mintyswap V3 oracle
+    /// @param pool Address of Mintyswap V3 pool that we want to observe
     /// @param period Number of seconds in the past to start calculating time-weighted average
     /// @return timeWeightedAverageTick The time-weighted average tick from (block.timestamp - period) to block.timestamp
     function consult(address pool, uint32 period) internal view returns (int24 timeWeightedAverageTick) {

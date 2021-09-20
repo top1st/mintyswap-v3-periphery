@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity =0.7.6;
 
-import '@uniswap/v3-core/contracts/interfaces/callback/IMintyswapV3SwapCallback.sol';
-import '@uniswap/v3-core/contracts/libraries/SafeCast.sol';
-import '@uniswap/v3-core/contracts/interfaces/IMintyswapV3Pool.sol';
+import '../interfaces/callback/IMintyswapV3SwapCallback.sol';
+import '../libraries/SafeCast.sol';
+import '../interfaces/IMintyswapV3Pool.sol';
 import '@openzeppelin/contracts/token/ERC20/IERC20.sol';
 
 contract TestMintyswapV3Callee is IMintyswapV3SwapCallback {

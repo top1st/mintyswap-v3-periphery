@@ -2,10 +2,10 @@
 pragma solidity >=0.7.5;
 pragma abicoder v2;
 
-import '@uniswap/v3-core/contracts/interfaces/callback/IMintyswapV3SwapCallback.sol';
+import './callback/IMintyswapV3SwapCallback.sol';
 
 /// @title Router token swapping functionality
-/// @notice Functions for swapping tokens via Uniswap V3
+/// @notice Functions for swapping tokens via Mintyswap V3
 interface ISwapRouter is IMintyswapV3SwapCallback {
     struct ExactInputSingleParams {
         address tokenIn;

@@ -2,7 +2,7 @@
 pragma solidity >=0.5.0;
 pragma abicoder v2;
 
-import '@uniswap/v3-core/contracts/interfaces/IMintyswapV3Pool.sol';
+import '../interfaces/IMintyswapV3Pool.sol';
 
 import '../interfaces/ITickLens.sol';
 
