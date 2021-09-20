@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 pragma solidity >=0.5.0 <0.8.0;
 
-import '@uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol';
+import '@uniswap/v3-core/contracts/interfaces/IMintyswapV3Pool.sol';
 
 /// @title Weighted Oracle library
 /// @notice Provides functions to integrate with different tier oracles of the same V3 pair
@@ -26,7 +26,7 @@ library WeightedOracleLibrary {
         secondsAgos[1] = 0;
 
         (int56[] memory tickCumulatives, uint160[] memory secondsPerLiquidityCumulativeX128s) =
-            IUniswapV3Pool(pool).observe(secondsAgos);
+            IMintyswapV3Pool(pool).observe(secondsAgos);
         int56 tickCumulativesDelta = tickCumulatives[1] - tickCumulatives[0];
         uint160 secondsPerLiquidityCumulativesDelta =
             secondsPerLiquidityCumulativeX128s[1] - secondsPerLiquidityCumulativeX128s[0];
