@@ -14,11 +14,11 @@ async function main() {
 
     const deployer = new ethers.Wallet(process.env.PRIVATE_KEY, ethers.provider)
 
-    const Router = await hre.ethers.getContractFactory("SwapRouter", deployer);
-    const router = await Router.deploy("0x21bf88d5753f971ADD459b33504cb1B62c2D2719", WETHAddress)
-    await router.deployed()
+    const Migrator = await hre.ethers.getContractFactory("V3Migrator", deployer);
+    const migrator = await Migrator.deploy("0x21bf88d5753f971ADD459b33504cb1B62c2D2719", WETHAddress, "0x5200Cb7bF0980850baa68F2D2239eE7Bc6397329")
+    await migrator.deployed()
 
-    console.log(router.address)
+    console.log(migrator.address)
 }
 
 // We recommend this pattern to be able to use async/await everywhere

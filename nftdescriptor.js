@@ -1,3 +1,3 @@
 module.exports = {
-    NFTDescriptor: "0x26ae3de07F735fEe75C0CaC44AE1c8ec7f370F95",
+    NFTDescriptor: "0x418467BE923EC19817710e2898f648b8B4de87c6",
 };

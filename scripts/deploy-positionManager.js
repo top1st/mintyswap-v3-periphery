@@ -3,7 +3,7 @@ const {ethers, network} = hre
 const {formatEther, parseEther} = ethers.utils
 require('dotenv').config()
 const WETHAddress = {
-    'hardhat': '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
+    'hardhat': '0xc778417E063141139Fce010982780140Aa0cD5Ab',
     'mainnet': '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
     'rinkeby': '0xc778417E063141139Fce010982780140Aa0cD5Ab'
 }[network.name]
@@ -32,7 +32,7 @@ async function main() {
     const PositionManager = await hre.ethers.getContractFactory("NonfungiblePositionManager", {
         signer: deployer
     });
-    const positionManager = await PositionManager.deploy("0x42eb44df87B9170363dE9B09bd39BF9b5F05f231", WETHAddress, positionDescriptor.address)
+    const positionManager = await PositionManager.deploy("0x21bf88d5753f971ADD459b33504cb1B62c2D2719", WETHAddress, positionDescriptor.address)
     await positionManager.deployed()
 
     console.log('positionManager', positionManager.address)
